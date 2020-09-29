@@ -2,6 +2,48 @@
 
 JS
 
+28/9/2020
+
+1. JS Advanced features
+2. ES6
+
+12 - break 
+1:30 - lunch
+4 - tea
+
+
+call function using call() or apply() * 
+immidieate call using (), using new keyword
+
+fucntions are variadinc = can pass any no of args to functions
+
+Closure - only way to maintain private scopes
+
+everything in script tag is public
+but if you wrap it in function its not accessinle from outside
+
+using onclick in html is easier to hack
+so use addeventlistner
+
+constructor functions
+- mimic classes in JS
+
+new keyword
+this -> refers to new context
+this is returned by default
+if not called without new then its a global context
+can be handeled using if(this.constructor !== Employee)
+{
+	return new Employee(1,2,3);
+}
+this.1=1
+this.2=2
+this.3=3
+
+spinner = (function(){count=0; return {up: function(){return ++count;}, down: function(){return --count;}}})();
+
+JS
+
 29/9/2020
 
 1. Complexity to build apps
