@@ -99,5 +99,5 @@ Hiding is costly!!
 Day-1 self study
     'bind' method of a function
     map, reduce, forEach, filter methods of array
+    jQuery
 
-    
