@@ -192,3 +192,19 @@ class FT extends FFT{
 }
 
 11.es-features.org
+
+
+
+view = component in react
+componengt can be a class / function
+
+GOLANG : allows multiple method returns
+
+stqateobject is observable infra maintained by react to maintain states of object
+
+for all events : event object is passed as arg
+
+event.target = reference to dom that triggered this event
+
+to pass data to component we use props
+
