@@ -25,7 +25,7 @@
             //behavior
             onGreetClick = () => {
                 this.setState({
-                    message : `Hi ${this.state.userName}, Have a nice day!`
+                    message : `Hi ${this.state.userName}, ${this.props.template}`
                 });
             };
 
@@ -53,7 +53,13 @@
             }
         }
 
-        ReactDOM.render(<Greeter/>, document.getElementById('root'));
+        const greetMsg = 'Have a good day!'
+        ReactDOM.render(
+            <div>
+                <Greeter template={greetMsg} x={100}/>
+                <Greeter template="Have a nice day!" />
+            </div>
+            , document.getElementById('root'));
     </script>
 </head>
 <body>
