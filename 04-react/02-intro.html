@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Intro</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script>
+        var counter = 0;
+        function onBtnRenderClick(){
+            //updating the counter
+            ++counter;
+
+            var appEle = React.createElement('div', null, 
+                React.createElement('h1', null, 'React.js'),
+                React.createElement('hr'),
+                React.createElement('div', null, 
+                    React.createElement('span', null, 'Counter : '),
+                    React.createElement('span', null, counter)
+                ),
+                React.createElement('section', null, 
+                    React.createElement('h3', null, 'Introduction'),
+                    React.createElement('p', null, 'Lorem dolore sunt dolore fugiat enim pariatur ex nulla incididunt fugiat nostrud cupidatat minim. Exercitation irure ipsum id reprehenderit ad. Consectetur laborum amet commodo quis nisi ea deserunt ex ullamco veniam fugiat. Elit aliquip est eiusmod amet voluptate. Culpa sit est cillum sit incididunt sit id nostrud Lorem eiusmod reprehenderit ut. Laboris officia non eiusmod mollit nostrud veniam. Velit commodo et esse minim labore amet tempor.'),
+                    React.createElement('p', null, 'Irure consequat enim consectetur nostrud et. Anim mollit ipsum eiusmod officia. Nulla reprehenderit nisi in sunt reprehenderit elit adipisicing nostrud pariatur ex dolore cillum culpa do. Incididunt id voluptate ut veniam. Qui occaecat irure irure pariatur duis. Nisi consequat aute eu ea ut laborum aute.'),
+                    React.createElement('p', null, 'Laboris cupidatat dolor nulla Lorem pariatur. Officia fugiat labore tempor nisi cupidatat anim. Irure dolor aute dolore aliquip excepteur cupidatat laborum excepteur dolore quis aliqua fugiat. Fugiat eu aliqua duis officia minim cillum in esse sit id dolore esse reprehenderit irure. Dolor nulla anim voluptate culpa do aute nulla labore Lorem velit. Dolor sint irure adipisicing aute cillum commodo amet laboris esse ea in magna incididunt cupidatat.'),
+                ),
+                React.createElement('section', null,
+                    React.createElement('h3', null, 'Advantages'),
+                    React.createElement('ol', null, 
+                        React.createElement('li', null,'Declarative'),
+                        React.createElement('li', null, 'Efficient')
+                    )
+                )
+            );
+
+            ReactDOM.render(appEle, document.getElementById('root'))
+        }
+        function onDocumentLoad(){
+            var btnRender = document.getElementById('btnRender');
+            btnRender.addEventListener('click', onBtnRenderClick);
+        }
+        window.addEventListener('load', onDocumentLoad);
+    
+    </script>
+</head>
+<body>
+    <input type="button" value="Render" id="btnRender">
+    <div id="root">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Component Intro</title>
+    <style>
+        .highlight{
+            color : blue;
+            font-size: 18pt;
+        }
+    </style>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+        class Greeter extends React.Component{
+            //state
+            state = {
+                message : '[Dummy message]',
+                userName : ''
+            };
+
+            //behavior
+            onGreetClick = () => {
+                this.setState({
+                    message : `Hi ${this.state.userName}, Have a nice day!`
+                });
+            };
+
+            onUserNameChange = (evt) => {
+                //evt.target -> reference to the DOM node that triggered this event
+                this.setState({
+                    userName : evt.target.value
+                });
+            }
+
+            //presentation
+            render(){
+                return(
+                    <div>
+                        <h1>Greeter</h1>
+                        <hr/>
+                        <label htmlFor="">User Name :</label>
+                        <input type="text" name="" id="txtUserName" onChange={this.onUserNameChange}/>
+                        <input type="button" value="Greet" id="btnGreet" onClick={this.onGreetClick}/>
+                        <div id="divMessage" className="highlight">
+                            {this.state.message}
+                        </div>
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(<Greeter/>, document.getElementById('root'));
+    </script>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+</body>
+</html>
