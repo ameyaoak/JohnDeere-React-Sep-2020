@@ -208,3 +208,73 @@ event.target = reference to dom that triggered this event
 
 to pass data to component we use props
 
+
+JS
+
+30/9/2020
+
+
+
+Flux is guidline from facebook to manage state
+then redux - lib to help manage state based on guidlines of flux
+
+
+Data must notr be maintaines in compo state as it will become diff to share this data with other compos
+
+
+State - 
+1. UI State - supports presentation logic of App
+			- very very unlikely that this data will be needed in other parts of the app
+			- maintain this data in component using state
+
+2. App State - supports business logic of app
+			 - very very likely that this data will be needed in other parts of the app
+			 - dont maintain this in component using the state
+
+Redux to manage app state
+	-Given object called Store ehrere we maintain the complete app state (only 1 per app)
+	-Store exposes method called getState() - returns state
+	-Expose subscribe() that takes function as arg and it will call state the call back function on state change
+	- discpatch(action) api to commiunicate store about users action
+	- reducer(currentState from store, action from user) funcion acts on the acrion and decides the new state in the store
+		returns new state if it knows how to else returns existing state
+
+		- Store will change the state in case reducer returns a new state and it calls the subscriber telling UI about new state
+
+	- reducer is a must for store
+	- there can be multiple reducers
+
+	Pub Sub type of impl	
+
+let StateMangager = (function(){
+    let _currentState = undefined,
+        _callbacks = [],
+        _reducer = undefined;
+
+    function getState(){
+        return _currentState;
+    }
+
+    function subscribe(callback){
+        _callbacks.push(callback);
+    }
+
+    function triggerChange(){
+        _callbacks.forEach(callback => callback());
+    }
+
+    function dispatch(action){
+        const newState = _reducer(_currentState, action);
+        if (newState === _currentState) return;
+        _currentState = newState;
+        triggerChange();
+    }
+
+    function createStore(reducer){
+        _reducer = reducer;
+        let store = { getState, subscribe, dispatch };
+        return store;
+    }
+
+    return { createStore };
+})();
