@@ -132,3 +132,13 @@ http://es6-features.org
 
 React Components
     Encapsulation of Presentation + UI Behavior + State
+
+JSX Vs HTML
+Every open tag must have a close tag
+Use 'htmlFor' instead of 'for'
+Use 'className' instead of 'class'
+
+
+Day-2 Assignment
+Solve the SalaryCalculator using react.js
+

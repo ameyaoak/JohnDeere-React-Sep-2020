@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script type="text/babel">
+        class ProductsCount extends React.Component{
+            render() {
+                const { productNames } = this.props;
+                return(
+                    <div>
+                        <span>Products # : </span>
+                        <span>{productNames.length}</span>
+                    </div>
+                )
+            }
+        }
+        class Products extends React.Component{
+            state = { 
+                productNames : [],
+                newProductName : ''
+            };
+
+            onAddNewClick = () => {
+                const { productNames, newProductName } = this.state;
+                const newProductList = [...productNames, newProductName];
+                this.setState({ productNames : newProductList});
+                this.props.onListChange(newProductList);
+            }
+            render() {
+                const { productNames } = this.state;
+                const productItems = productNames.map((productName, index) => (<li key={index}>{productName}</li>));
+                return(
+                    <div>
+                        <h1>Products</h1>
+                        <hr/>
+                        <label htmlFor="">ProductName :</label>
+                        <input type="text" onChange={ evt => this.setState({ newProductName : evt.target.value }) }/>
+                        <input type="button" value="Add New" onClick={this.onAddNewClick}/>                        
+                        <ol>
+                            {productItems}
+                        </ol>
+                    </div>
+                )
+            }
+        }
+
+        class App extends React.Component{
+            state = { productNames : [] };
+            onListChange = (productNames) => {
+                this.setState({productNames : productNames });
+            }
+            render(){
+                return (
+                    <div>
+                        <ProductsCount productNames={this.state.productNames} />
+                        <Products onListChange={ this.onListChange }/>
+                    </div>
+                )
+            }
+        }
+        
+        ReactDOM.render(
+            <App/>
+        ,document.getElementById('root'))
+    
+    </script>
+</head>
+<body>
+    <div id="root">
+
+        
+    </div>
+</body>
+</html>
