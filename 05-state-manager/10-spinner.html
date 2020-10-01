@@ -11,35 +11,42 @@
     <script src="babel.min.js"></script>
     <script type="text/babel">
         function spinnerReducer(currentState = 50, action){
-            if (action.type === 'INCREMENT') return currentState + 1;
-            if (action.type === 'DECREMENT') return currentState - 1;
+            if (action.type === 'INCREMENT') return currentState + action.payload;
+            if (action.type === 'DECREMENT') return currentState - action.payload;
             return currentState;
         }
 
         const store = Redux.createStore(spinnerReducer)
 
         class Spinner extends React.Component{
+            state = {
+                delta : 0
+            };
             render() {
+                const { delta } = this.state;
                 const { spinnerValue, increment, decrement } = this.props;
                 return (
                     <div>
                         <h3>Spinner</h3>
                         <hr/>
-                        <input type="button" value="Decrement" onClick={decrement}/>
+                        <label htmlFor="">Delta : </label>
+                        <input type="number" onChange={ evt => this.setState({delta : parseInt(evt.target.value) }) }/>
+                        <br/>
+                        <input type="button" value="Decrement" onClick={() => decrement(delta)}/>
                         <span> [ {spinnerValue} ] </span>
-                        <input type="button" value="Increment" onClick={increment}/>
+                        <input type="button" value="Increment" onClick={() => increment(delta)}/>
                     </div>
                 )
             }
         }
 
         const spinnerActionCreators = { 
-            increment(){
-                const inc_action = { type : 'INCREMENT'};
+            increment(delta){
+                const inc_action = { type : 'INCREMENT', payload : delta };
                 return inc_action;
             },
-            decrement(){
-                const  dec_action = { type : 'DECREMENT' };
+            decrement(delta){
+                const  dec_action = { type : 'DECREMENT', payload : delta };
                 return dec_action;
             }
         };
