@@ -1,0 +1,91 @@
+create-react-app - creates application setup using webpack (web app bundler), bundled for deployment
+
+1. compile js files
+2. minified
+3. uglyfied
+4. versioned
+5. updated in html page
+
+above same happens for css
+
+
+all done by task runners - 
+like grunt, webpack
+
+go to folder to generate application and run
+npx create-react-app app-name
+
+
+package.json - manifest file of applications
+			- has dependencies and scripts 
+			- we add the external dependencies in there
+			- we add script there
+			- react scripts has all webpack config
+
+			- scripts has all the commands to run the app
+			- react scripts are globally insatlled
+
+
+We use ES6 modules to modularize app code
+1. Everything defined in js or jsx file is consideted private to that file
+2. if any entity has to be made public it has to be explicetly exported.
+3. if any public entity has to be used then it has to be explicetly imported.
+
+
+----------------------------------------------
+functions defined in js file need to be publically exposed using export
+
+similarly need to be inported using import
+
+The above are assembled in a Module object and that object is exported
+
+
+There can be only 1 default export 
+
+CSS import copies contains of css file in index.js
+
+
+import ./ = import private files (as they have ./)
+import React = node modeules not private app files
+
+----------------------------------------------
+
+* Since React 15 a function can also be treated as a component
+Adviced compared to class components as it dosent create classes but direct components.
+
+
+Installing redux - 
+
+npm install redux 
+OR 
+yarn add redux
+
+
+Importing the default export object as 
+import calc from './calculator' in index.js
+
+4 ways to do import as in index.js example
+----------------------------------------------
+
+Folder structure
+
+src
+	/bugTracker
+		/actions - logic
+		/views - has child components
+		index.js - has defination for the component class
+	/reducers
+		/bugsReducer.js
+	/store
+		index.js - logic for creating the store
+
+----------------------------------------------
+
+
+
+Other commands for node
+npm install yarn -g
+yarn/npm are the package managers (yarn is latest)
+to install external dependencies stick to eighter yarn/npm.
+emmet - for html completion (extension in vs code)
+
