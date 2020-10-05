@@ -1,0 +1,24 @@
+{
+  "bugs": [
+    {
+      "id": 7,
+      "name": "Data integrity checks failed",
+      "isClosed": false,
+      "createdAt": "2020-10-05T11:46:45.701Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Payroll Master"
+    },
+    {
+      "id": 2,
+      "name": "Expense Manager"
+    },
+    {
+      "id": 3,
+      "name": "Test Manager"
+    }
+  ]
+}
