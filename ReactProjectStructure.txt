@@ -89,3 +89,106 @@ yarn/npm are the package managers (yarn is latest)
 to install external dependencies stick to eighter yarn/npm.
 emmet - for html completion (extension in vs code)
 
+
+
+JSON Server 
+Make a mock json
+open new terminal window and go to the folder containing the mocked json (db.json)
+
+npx json-server db.json -p 3030.
+this will expose endpoints for the data.
+
+
+Axios - rest client (with promise)
+yarn add axios
+
+every .then returns a promise 
+
+Always return promise from functions that performs async operation
+as the operation will be completed later
+
+
+Middleeare of redux can be used as CORS
+Middleware is like util function for shared function across application
+more details : https://github.com/tkmagesh/JohnDeere-React-Sep-2020/commit/2e0071711542532f2e8870d5592eaef1ba2b310f
+
+
+primary component is the container component as it interacts
+with redux infra
+
+
+presentation components are dumb components as it gets data and
+actions from the container component and dosent interacts
+with redux infra
+
+
+React - Redux component
+	has connect function - to extract data to be passed to components
+	also action dispatchers can be passed to components
+
+	has provider function - this makes redux store available to components
+
+	yarn add react-redux
+
+
+
+	react hooks --------
+
+
+
+Routing - in react
+
+yarn add react-router-dom
+
+ref : https://reactrouter.com/web/guides/quick-start
+
+phpjabbers
+
+
+Hooks are functions that manage side effect of a functional component
+
+hook functions must start with a word use
+
+built in hooks in react -
+	1. useState
+	2. useEffect
+	3. useMemo
+	4. useReducer
+	5. useRef
+
+
+
+
+Package and deploy
+	1. Compile JSX
+	2. Minify JS
+	3. Uglify JS files
+	4. Bundle JS files (multiple files to 1 file)
+	5. Version the js file (to avoid cached script files getting used)
+	6. compile scss/less/compas
+	7. minify css
+	8. bundle css
+	9. version css
+	10. update ref of build generator js and css file in index.html
+	11. minify index.html
+	12. generated resources to be copied to build folder for deployment
+
+
+	we do this using 
+	yarn build or npm run build
+	(webpack config)
+
+	build folder is output of this
+
+the script behind this building is global 
+you can run below commands for customized scripts
+
+yarn eject
+npm run eject
+
+this will increase lot of dependencies in pkg file
+
+thre is a new folder scripts which has all the scripts ejected
+
+
+
