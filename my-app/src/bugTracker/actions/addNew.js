@@ -1,10 +1,11 @@
 import bugApi from '../services/bugApi';
-export default function addNew (bugName){
+export default function addNew (bugName, projectId){
     const newBugData = {
         id : 0,
         name : bugName,
         isClosed : false, 
-        createdAt : new Date()
+        createdAt : new Date(),
+        projectId : projectId
     };
     return bugApi
         .save(newBugData)

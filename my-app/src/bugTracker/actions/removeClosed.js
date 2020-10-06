@@ -3,7 +3,7 @@ import bugApi from '../services/bugApi';
 //Using the async middleware because we need access to the store state
 export default function removeClosed(){
     return function(dispatch, getState){
-        const existingBugs = getState(),
+        const existingBugs = getState().bugsState,
             closedBugs = existingBugs.filter(bug => bug.isClosed);
         closedBugs
             .forEach(closedBug => {

@@ -1,28 +1,57 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { bindActionCreators } from 'redux';
-import axios from 'axios';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import store from "./store";
+
+import Home from './Home';
 import BugTracker from './bugTracker';
-import store from './store';
-import bugActionCreators from './bugTracker/actions';
+import Projects from './projects';
+import BugInfo from './bugTracker/views/BugInfo';
 
-const bugActionDispatchers = bindActionCreators(bugActionCreators, store.dispatch);
-
-function renderApp(){
-  const bugs = store.getState();
   ReactDOM.render(
-    <React.StrictMode>
-      <BugTracker bugs={bugs} {...bugActionDispatchers} />
-    </React.StrictMode>,
-    document.getElementById('root')
+    <Provider store={store}>
+      <React.StrictMode>
+        <Router>
+          <h1>My App</h1>
+          <div>
+            <span>
+              {" "}
+              [ <Link to="/">Home</Link> ]{" "}
+            </span>
+            <span>
+              {" "}
+              [ <Link to="/projects">Projects</Link> ]{" "}
+            </span>
+            <span>
+              {" "}
+              [ <Link to="/bugs">Bugs</Link> ]{" "}
+            </span>
+          </div>
+          <Switch>
+            <Route path="/projects">
+              <Projects />
+            </Route>
+            <Route path="/bugs/:id">
+              <BugInfo/>
+            </Route>
+            <Route path="/bugs">
+              <BugTracker />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </Router>
+      </React.StrictMode>
+    </Provider>,
+    document.getElementById("root")
   );
-}
 
-renderApp();
-store.subscribe(renderApp);
+
 
 
 /* 

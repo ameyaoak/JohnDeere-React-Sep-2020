@@ -198,3 +198,70 @@ Presentation Component / Dumb component
 Assignment
     Implement "listing, adding and removing projects"
     
+
+react-redux
+    connect (HOC)
+        extracting data to be passed to the component
+        creating action dispatchers to be passed to the component
+
+    Provider
+        makes the redux store available to the connected (above) components
+
+npm install react-redux
+OR
+yarn add react-redux
+
+
+Routing
+npm install react-router-dom
+OR
+yarn add react-router-dom
+
+
+
+After training assignments
+1. Implement sorting
+2. Display information about the selected bug in the BugInfo component
+3. When navigated to BugTracker component from 'Projects' component, display only the bugs for that project
+4. Implement pagination in BugTracker component
+
+
+React Hooks
+    functions that manage side effects for a functional component
+    hook functions must start with the word 'use'
+    built in hooks in React
+        useState
+        useEffect
+        useMemo
+        useReducer
+        useRef
+
+Packaging a web app
+    Compile JSX
+    minify the js
+    uglify the js 
+    bundle the js
+    version the js
+
+    compile scss/less/compass
+    minify the css
+    bundle the css
+    version the css
+
+    updated the references of the build generated js & css files in the index.html
+    minify the index.html
+    
+    the final generated resources need to copied to the build folder for deployment
+
+
+    npm run build
+    OR
+    yarn build
+
+
+    http://bit.ly/react-videos
+    http://bit.ly/javascript-training-videos
+
+    tkmagesh77@gmail.com
+    99019-11221
+    

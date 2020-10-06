@@ -1,10 +1,46 @@
 {
   "bugs": [
     {
-      "id": 7,
+      "id": 1,
+      "name": "Server communication failure",
+      "isClosed": false,
+      "createdAt": "2020-10-06T07:41:55.679Z",
+      "projectId": "1"
+    },
+    {
+      "id": 2,
       "name": "Data integrity checks failed",
       "isClosed": false,
-      "createdAt": "2020-10-05T11:46:45.701Z"
+      "createdAt": "2020-10-06T07:42:07.985Z",
+      "projectId": "2"
+    },
+    {
+      "id": 3,
+      "name": "User actions not recognized",
+      "isClosed": false,
+      "createdAt": "2020-10-06T07:42:18.788Z",
+      "projectId": "2"
+    },
+    {
+      "id": 4,
+      "name": "Expenses are not recorded",
+      "isClosed": false,
+      "createdAt": "2020-10-06T07:42:28.031Z",
+      "projectId": "2"
+    },
+    {
+      "id": 5,
+      "name": "Unable to close the tests",
+      "isClosed": false,
+      "createdAt": "2020-10-06T07:47:38.070Z",
+      "projectId": "3"
+    },
+    {
+      "id": 6,
+      "name": "Expense limits are not recorded",
+      "isClosed": false,
+      "createdAt": "2020-10-06T10:01:59.186Z",
+      "projectId": 2
     }
   ],
   "projects": [
